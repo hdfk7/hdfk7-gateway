@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "app.exclude_url",
+      "type": "java.lang.String",
+      "description": "no auth url."
+    }
+  ]
+}
