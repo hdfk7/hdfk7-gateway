@@ -1,8 +1,8 @@
 package com.hdfk7.gateway.exception;
 
+import cn.hutool.json.JSONUtil;
 import com.hdfk7.proto.base.exception.BaseException;
 import com.hdfk7.proto.base.result.ResultCode;
-import com.hdfk7.proto.base.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
@@ -60,7 +60,7 @@ public class GlobalExceptionHandler implements ErrorWebExceptionHandler {
                     String httpMethod = request.getMethod().name().toUpperCase(Locale.ROOT);
                     String url = request.getURI().getPath();
                     log.error(httpMethod + ":" + url + " " + msg, e);
-                    return bufferFactory.wrap(JsonUtil.toJsonStr(ResultCode.SYS_ERROR.bindResult().bindMsg(msg).bindCode(code)).getBytes(StandardCharsets.UTF_8));
+                    return bufferFactory.wrap(JSONUtil.toJsonStr(ResultCode.SYS_ERROR.bindResult().bindMsg(msg).bindCode(code)).getBytes(StandardCharsets.UTF_8));
                 }));
     }
 }
