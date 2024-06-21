@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.hdfk7.boot</groupId>
         <artifactId>hdfk7-boot-starter-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
     <artifactId>hdfk7-gateway</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>hdfk7-gateway</name>
 
     <properties>
