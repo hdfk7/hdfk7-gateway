@@ -1,0 +1,40 @@
+server:
+  shutdown: graceful
+  port: 80
+  error.whitelabel.enabled: false
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: password
+        server-addr: 10.10.10.10:8848
+      config:
+        username: nacos
+        password: password
+        server-addr: 10.10.10.10:8848
+        file-extension: yaml
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      httpclient:
+        connect-timeout: 45000
+        response-timeout: 45000
+  data:
+    redis:
+      host: 10.10.10.10
+      port: 9008
+      database: 0
+      password: password
+knife4j:
+  gateway:
+    enabled: true
+    strategy: discover
+    discover:
+      enabled: true
+      excluded-services: ${spring.application.name}
+app.ignore-url: /**/*.*,/**/v3/api-docs/**
