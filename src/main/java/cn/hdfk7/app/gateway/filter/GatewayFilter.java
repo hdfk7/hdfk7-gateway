@@ -1,7 +1,7 @@
-package com.hdfk7.gateway.filter;
+package cn.hdfk7.app.gateway.filter;
 
-import com.hdfk7.boot.starter.common.constants.HttpHeaderConst;
-import com.hdfk7.gateway.component.properties.ApplicationProperties;
+import cn.hdfk7.app.gateway.component.properties.ApplicationProperties;
+import cn.hdfk7.boot.starter.common.constants.HttpHeaderConst;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;

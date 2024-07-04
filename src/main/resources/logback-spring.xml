@@ -48,7 +48,7 @@
         <appender-ref ref="FILE"/>
     </appender>
 
-    <logger name="com.hdfk7" level="DEBUG"/>
+    <logger name="cn.hdfk7" level="DEBUG"/>
     <logger name="org.springframework.cloud" level="WARN"/>
     <logger name="org.apache.kafka" level="WARN"/>
     <logger name="com.alibaba.nacos" level="ERROR"/>

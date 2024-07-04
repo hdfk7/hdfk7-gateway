@@ -3,29 +3,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.hdfk7.boot</groupId>
+        <groupId>cn.hdfk7.boot</groupId>
         <artifactId>hdfk7-boot-starter-parent</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.6-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
+    <groupId>cn.hdfk7.app</groupId>
     <artifactId>hdfk7-gateway</artifactId>
     <version>1.0.0</version>
     <name>hdfk7-gateway</name>
 
     <properties>
-        <hdfk7-boot-starter-common.version>1.0.0-SNAPSHOT</hdfk7-boot-starter-common.version>
-        <hdfk7-boot-starter-discovery.version>1.0.0-SNAPSHOT</hdfk7-boot-starter-discovery.version>
+        <hdfk7-boot-starter-common.version>1.0.7-SNAPSHOT</hdfk7-boot-starter-common.version>
+        <hdfk7-boot-starter-discovery.version>1.0.5-SNAPSHOT</hdfk7-boot-starter-discovery.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.hdfk7.boot</groupId>
+            <groupId>cn.hdfk7.boot</groupId>
             <artifactId>hdfk7-boot-starter-common</artifactId>
             <version>${hdfk7-boot-starter-common.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.hdfk7.boot</groupId>
+            <groupId>cn.hdfk7.boot</groupId>
             <artifactId>hdfk7-boot-starter-discovery</artifactId>
             <version>${hdfk7-boot-starter-discovery.version}</version>
         </dependency>

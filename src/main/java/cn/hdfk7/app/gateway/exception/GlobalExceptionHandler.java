@@ -1,8 +1,8 @@
-package com.hdfk7.gateway.exception;
+package cn.hdfk7.app.gateway.exception;
 
 import cn.hutool.json.JSONUtil;
-import com.hdfk7.proto.base.exception.BaseException;
-import com.hdfk7.proto.base.result.ResultCode;
+import cn.hdfk7.boot.proto.base.exception.BaseException;
+import cn.hdfk7.boot.proto.base.result.ResultCode;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
