@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
-    <springProperty scope="context" name="application.name" source="spring.application.name"/>
-    <property name="LOG_HOME" value="/tmp/logs/app/${application.name}"/>
+    <springProperty name="spring.application.name" source="spring.application.name"/>
+    <property name="log.home" value="/tmp/logs/app/${spring.application.name}"/>
+    <property name="log.pattern"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${spring.application.name},%X{tid}] [%0.30thread] %0.30logger{30} :%msg%n"/>
 
     <!-- 控制台输出 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.mdc.TraceIdMDCPatternLogbackLayout">
-                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${application.name},%X{tid}] [%0.30thread] %0.30logger{30} :%msg%n</pattern>
+                <pattern>${log.pattern}</pattern>
             </layout>
         </encoder>
     </appender>
@@ -16,7 +18,7 @@
     <appender name="SKYWALKING" class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender">
         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.mdc.TraceIdMDCPatternLogbackLayout">
-                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${application.name},%X{tid}] [%0.30thread] %0.30logger{30} :%msg%n</pattern>
+                <pattern>${log.pattern}</pattern>
             </layout>
         </encoder>
     </appender>
@@ -26,14 +28,17 @@
         <!-- 日志滚动策略（以小时单位） 注：TimeBased默认是一天更新一次 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!--日志文件输出的文件名-->
-            <FileNamePattern>${LOG_HOME}/${HOSTNAME}.%d{yyyyMMddHH}.%i.log</FileNamePattern>
-            <!-- each file should be at most 500MB, keep 5 (5*24) days worth of history, but at most 20GB -->
+            <FileNamePattern>${log.home}/${HOSTNAME}.%d{yyyyMMddHH}.%i.log</FileNamePattern>
+            <!--日志文件保留天数-->
+            <maxHistory>7</maxHistory>
+            <!--日志文件单个大小限制-->
             <maxFileSize>500MB</maxFileSize>
-            <maxHistory>60</maxHistory>
+            <!--日志文件整体大小限制-->
+            <totalSizeCap>2GB</totalSizeCap>
         </rollingPolicy>
         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.mdc.TraceIdMDCPatternLogbackLayout">
-                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${application.name},%X{tid}] [%0.30thread] %0.30logger{30} :%msg%n</pattern>
+                <pattern>${log.pattern}</pattern>
             </layout>
         </encoder>
     </appender>
