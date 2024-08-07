@@ -5,7 +5,7 @@
     <parent>
         <groupId>cn.hdfk7.boot</groupId>
         <artifactId>hdfk7-boot-starter-parent</artifactId>
-        <version>1.0.12-SNAPSHOT</version>
+        <version>1.0.15-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
@@ -17,6 +17,8 @@
     <properties>
         <hdfk7-boot-starter-common.version>1.0.9-SNAPSHOT</hdfk7-boot-starter-common.version>
         <hdfk7-boot-starter-discovery.version>1.0.8-SNAPSHOT</hdfk7-boot-starter-discovery.version>
+
+        <spring-cloud-starter-gateway.version>4.1.1</spring-cloud-starter-gateway.version>
     </properties>
 
     <dependencies>
@@ -34,6 +36,18 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
+            <version>${spring-cloud-starter-gateway.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-gateway-server</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-gateway-server</artifactId>
+            <version>${spring-cloud-starter-gateway.version}</version>
         </dependency>
 
         <dependency>
