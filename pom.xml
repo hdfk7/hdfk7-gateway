@@ -5,7 +5,7 @@
     <parent>
         <groupId>cn.hdfk7.boot</groupId>
         <artifactId>hdfk7-boot-starter-parent</artifactId>
-        <version>1.0.15-SNAPSHOT</version>
+        <version>1.0.16-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
@@ -15,8 +15,8 @@
     <name>hdfk7-gateway</name>
 
     <properties>
-        <hdfk7-boot-starter-common.version>1.0.9-SNAPSHOT</hdfk7-boot-starter-common.version>
-        <hdfk7-boot-starter-discovery.version>1.0.8-SNAPSHOT</hdfk7-boot-starter-discovery.version>
+        <hdfk7-boot-starter-common.version>1.0.10-SNAPSHOT</hdfk7-boot-starter-common.version>
+        <hdfk7-boot-starter-discovery.version>1.0.9-SNAPSHOT</hdfk7-boot-starter-discovery.version>
 
         <spring-cloud-starter-gateway.version>4.1.1</spring-cloud-starter-gateway.version>
     </properties>
