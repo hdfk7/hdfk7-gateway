@@ -15,7 +15,7 @@
     <name>hdfk7-gateway</name>
 
     <properties>
-        <hdfk7-boot-starter-common.version>1.0.11-SNAPSHOT</hdfk7-boot-starter-common.version>
+        <hdfk7-boot-starter-common.version>1.0.12-SNAPSHOT</hdfk7-boot-starter-common.version>
         <hdfk7-boot-starter-discovery.version>1.0.9-SNAPSHOT</hdfk7-boot-starter-discovery.version>
 
         <spring-cloud-starter-gateway.version>4.1.1</spring-cloud-starter-gateway.version>
