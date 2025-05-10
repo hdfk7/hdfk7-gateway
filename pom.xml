@@ -5,20 +5,20 @@
     <parent>
         <groupId>cn.hdfk7.boot</groupId>
         <artifactId>hdfk7-boot-starter-parent</artifactId>
-        <version>1.0.16-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
     <groupId>cn.hdfk7.app</groupId>
     <artifactId>hdfk7-gateway</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>hdfk7-gateway</name>
 
     <properties>
-        <hdfk7-boot-starter-common.version>1.0.12-SNAPSHOT</hdfk7-boot-starter-common.version>
-        <hdfk7-boot-starter-discovery.version>1.0.9-SNAPSHOT</hdfk7-boot-starter-discovery.version>
+        <hdfk7-boot-starter-common.version>1.1.0-SNAPSHOT</hdfk7-boot-starter-common.version>
+        <hdfk7-boot-starter-discovery.version>1.1.0-SNAPSHOT</hdfk7-boot-starter-discovery.version>
 
-        <spring-cloud-starter-gateway.version>4.1.1</spring-cloud-starter-gateway.version>
+        <spring-cloud-gateway-server.version>4.1.1</spring-cloud-gateway-server.version>
     </properties>
 
     <dependencies>
@@ -36,18 +36,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
-            <version>${spring-cloud-starter-gateway.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-gateway-server</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-gateway-server</artifactId>
-            <version>${spring-cloud-starter-gateway.version}</version>
+            <version>${spring-cloud-gateway-server.version}</version>
         </dependency>
 
         <dependency>
